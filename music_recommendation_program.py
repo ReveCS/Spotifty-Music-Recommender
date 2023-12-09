@@ -51,15 +51,18 @@ def extract_features(dataset):
         
     return np.array(features)
 
-def recommend_songs(song_name, dataset_features, dataset, num_recommendations=10):
+# store array of features for each song in songs.csv
+dataset_features = extract_features(songs)
+
+def recommend_songs(song_name, dataset_features=dataset_features, dataset=songs, num_recommendations=10):
     """
     Prints out the top num_recommendations song recommendations from the songs.csv
-    dataset, given a song name. Prints an error message if the provided song
-    name can not be found within Spotify API.
+    dataset, given a song name. Prints an error message and returns None if the provided 
+    song name can not be found within the Spotify API.
     """
     query = sp.search(q=song_name, type='track', limit=1)
     if not query['tracks']['items']:
-        print(f"No results found for {song}")
+        print(f"No results found for {song_name}")
         return
     query_track = query['tracks']['items'][0]
     query_features = sp.audio_features(query_track['id'])[0]
@@ -79,17 +82,20 @@ def recommend_songs(song_name, dataset_features, dataset, num_recommendations=10
     ]).reshape(1, -1)
     
     similarity_scores = cosine_similarity(query_features[:, 3:], dataset_features[:, 3:])
-    recommended_indices = np.argsort(similarity_scores[0])[::-1][:num_recommendations]
+    recommended_indices = np.argsort(similarity_scores[0])[::-1]
+    first_song = dataset.loc[recommended_indices[0]]
+    # checks if the provided song was already in the dataset and therefore
+    # was the first song in the list of recommendations: skips it
+    # if so
+    if first_song['title'].replace('"', '') == query_track['name']:
+        if first_song['artist'] == query_track['artists'][0]['name']:
+            recommended_indices = recommended_indices[1:num_recommendations+1]
+    else:
+        recommended_indices = recommended_indices[:num_recommendations]
     
-    print(f"Recommended songs for '{song_name}':")
-    
+    recommendations = []
+
     for index in recommended_indices:
-        recommended_track = dataset.loc[index]
-        print(f"{recommended_track['title']} by {recommended_track['artist']}")
+        recommendations.append(dataset.loc[index])
 
-
-# creating array of desired features for every song in dataset
-dataset_features = extract_features(songs)
-# testing to show that it works properly
-song_name = input("Enter a song name: ")
-recommend_songs(song_name, dataset_features, songs)
+    return recommendations
