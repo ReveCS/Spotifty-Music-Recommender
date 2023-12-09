@@ -56,8 +56,8 @@ dataset_features = extract_features(songs)
 
 def recommend_songs(song_name, dataset_features=dataset_features, dataset=songs, num_recommendations=10):
     """
-    Prints out the top num_recommendations song recommendations from the songs.csv
-    dataset, given a song name. Prints an error message and returns None if the provided 
+    Returns the top num_recommendations song recommendations from the songs.csv
+    dataset as an array, given a song name. Prints an error message and returns None if the provided 
     song name can not be found within the Spotify API.
     """
     query = sp.search(q=song_name, type='track', limit=1)
