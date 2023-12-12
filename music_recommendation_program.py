@@ -18,6 +18,14 @@ sp = spotipy.Spotify(client_credentials_manager = auth_manage)
 # reading in data set
 songs = pd.read_csv("/Users/blewinski/Downloads/songs.csv")
 
+# fixing title column of songs dataset, as some song title strings have brackets
+# at the end that need to be gotten rid of in order to print out song titles neatly
+def rid_brackets(string):
+    if "[" in string:
+        string = string[:string.find("[")]
+    return string
+songs['title'] = songs['title'].apply(rid_brackets)
+
 # filling in missing values
 for col in songs:
     if songs[col].dtypes == 'float64':
@@ -56,7 +64,7 @@ dataset_features = extract_features(songs)
 
 def recommend_songs(song_name, dataset_features=dataset_features, dataset=songs, num_recommendations=10):
     """
-    Returns the top num_recommendations song recommendations from the songs.csv
+    Returns the top num_recommendations songs recommendations from the songs.csv
     dataset as an array, given a song name. Prints an error message and returns None if the provided 
     song name can not be found within the Spotify API.
     """
@@ -87,7 +95,7 @@ def recommend_songs(song_name, dataset_features=dataset_features, dataset=songs,
     # checks if the provided song was already in the dataset and therefore
     # was the first song in the list of recommendations: skips it
     # if so
-    if first_song['title'].replace('"', '') == query_track['name']:
+    if first_song['title'].replace('"', '').lower() == query_track['name'].lower():
         if first_song['artist'] == query_track['artists'][0]['name']:
             recommended_indices = recommended_indices[1:num_recommendations+1]
     else:
@@ -95,7 +103,21 @@ def recommend_songs(song_name, dataset_features=dataset_features, dataset=songs,
     
     recommendations = []
 
+    print(f"Recommended songs for {song_name}:")
+
     for index in recommended_indices:
         recommendations.append(dataset.loc[index])
 
     return recommendations
+
+# main method, receives song name as input and runs the recommendation function
+# to print out 10 recommended songs
+def main():
+    song_name = input("Enter the name of a song: ")
+    recs = recommend_songs(song_name)
+    if recs is not None:
+        for rec in recs:
+            print(f"{rec['title']} by {rec['artist']}")
+
+if __name__ == "__main__":
+    main()
