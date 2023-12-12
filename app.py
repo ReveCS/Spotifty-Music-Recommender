@@ -6,7 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import requests
 
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
 
 # Getting Client Id and Client Secret
 client_id = 'f232eda2b061463cbaa4102c5101aa7b'
