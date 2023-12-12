@@ -11,8 +11,8 @@ from streamlit_lottie import st_lottie
 # Getting Client Id and Client Secret
 client_id = 'f232eda2b061463cbaa4102c5101aa7b'
 client_secret = '626817ddc0a74c9c8b59da3d91095107'
-auth_manage = SpotifyClientCredentials(client_id = client_id, client_secret = client_secret)
-sp = spotipy.Spotify(client_credentials_manager = auth_manage) # Spotify object to access API
+auth_manage = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
+sp = spotipy.Spotify(client_credentials_manager=auth_manage)  # Spotify object to access API
 
 
 def load_lottie(url: str):
@@ -24,11 +24,11 @@ def load_lottie(url: str):
 
 def get_recommendations(track_name):
     # Get string track URI
-    results = sp.search(q = track_name, type = "track")
+    results = sp.search(q=track_name, type="track")
     track_uri = results["tracks"]["items"][0]["uri"]
 
     # Get recommended tracks
-    recommendations = sp.recommendations(seed_tracks = [track_uri], limit = 10)["tracks"]
+    recommendations = sp.recommendations(seed_tracks=[track_uri], limit=10)["tracks"]
     return recommendations
 
 
@@ -49,7 +49,7 @@ def get_analysis(start_year, end_year):
     fig, ax = plt.subplots()
     ax.plot(year['year'], (year['duration_ms'] / 1_000) / 60)
     ax.set_xlim(start_year, end_year)
-    ax.set_ylim(0,6.5)
+    ax.set_ylim(0, 6.5)
 
     # Add in title and subtitle
     ax.set_title("""Nobody got time for Music?""")
@@ -70,7 +70,7 @@ def get_analysis(start_year, end_year):
     # Add in title and subtitle
     ax.set_title("""Hearing protection recommended""")
     ax.text(x=.08, y=.86,
-            s= "",
+            s="",
             transform=fig.transFigure,
             ha='left',
             fontsize=20,
@@ -86,7 +86,7 @@ def get_analysis(start_year, end_year):
     ax.plot(year['year'], year['valence'])
     ax.plot(year['year'], year['acousticness'])
     ax.set_xlim(start_year, end_year)
-    ax.set_ylim(0,.85)
+    ax.set_ylim(0, .85)
 
     # Add in title and subtitle
     ax.set_title("""I've got a negative feeling...""")
@@ -109,7 +109,7 @@ def get_analysis(start_year, end_year):
     ax.plot(year['year'], year['danceability'])
     ax.plot(year['year'], year['energy'])
     ax.set_xlim(start_year, end_year)
-    ax.set_ylim(0,.85)
+    ax.set_ylim(0, .85)
 
     # Add in title and subtitle
     ax.set_title('Hmm...')
@@ -136,7 +136,7 @@ def get_analysis(start_year, end_year):
     ax.plot(year['year'], year['instrumentalness'])
     ax.plot(year['year'], year['speechiness'])
     ax.set_xlim(start_year, end_year)
-    ax.set_ylim(0,.32)
+    ax.set_ylim(0, .32)
 
     ax.set_yticks(np.arange(0, .35, 0.05))
 
@@ -175,7 +175,7 @@ def get_analysis(start_year, end_year):
 
 def main():
     lottie = load_lottie("https://lottie.host/41484d6f-44d0-4cce-a6f0-caf84cd11a1f/KGT0vYO2fg.json")
-    st_lottie(lottie, speed=1, height=200, key="initial")
+    # st_lottie(lottie, speed=1, height=200, key="initial")
 
     row0_1, row0_2 = st.columns((2, 1))
     row0_1.title("Spotify Sorting Hat 🎩")
@@ -241,6 +241,7 @@ def main():
 
         else:
             st.markdown(playlist)
+
 
 if __name__ == "__main__":
     main()
