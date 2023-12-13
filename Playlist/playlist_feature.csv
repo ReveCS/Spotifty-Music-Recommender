@@ -1,0 +1,36 @@
+id,name,artists,popularity,release_date,explicit,duration_ms,danceability,energy,key,mode,tempo,valence
+0obBFrPYkSoBJbvHfUIhkv,Sexy And I Know It,LMFAO,65,2011-01-01,False,199480,0.707,0.861,7,1,130.021,0.795
+0js3FSEsVCVHHsIWp0Y1q8,Good Feeling,Flo Rida,0,2022-06-24,False,248133,0.706,0.89,1,0,128.012,0.685
+6hkOqJ5mE093AQf2lbZnsG,The One That Got Away,Katy Perry,75,2010-01-01,False,227333,0.691,0.795,1,0,133.971,0.876
+73CMRj62VK8nUS4ezD2wvi,Set Fire to the Rain,Adele,83,2011-01-24,False,242973,0.603,0.67,2,0,107.993,0.446
+53QF56cjZA9RTuuMZDrSA6,I Won't Give Up,Jason Mraz,72,2012-04-13,False,240165,0.483,0.303,4,1,133.406,0.139
+2Pi11XaXLiQFtknSnoVbQ3,Rack City,Tyga,4,2021-10-22,True,208440,0.93,0.332,1,1,98.966,0.255
+6MAdEUilV2p9RQUqE5bMAK,Domino,Jessie J,67,2011-01-01,False,231693,0.757,0.547,7,1,126.977,0.793
+2BqSKeUHLR7o30IEt9OJa4,Stronger (What Doesn't Kill You) - 7th Heaven Club Mix,Kelly Clarkson,15,2012-02-03,False,448440,0.619,0.861,9,0,126.002,0.659
+6yARPLK0PV4heEyh7pVMGz,Part Of Me,Katy Perry,74,2012-01-01,False,216160,0.667,0.922,5,1,130.01,0.761
+1RMRkCn07y2xtBip9DzwmC,Turn Up the Music,Chris Brown,65,2012-07-03,False,227973,0.594,0.841,1,1,129.925,0.643
+3UGIZ8qcrMTwzLbx6Kttqt,Boyfriend,Justin Bieber,78,2012-01-01,False,171333,0.717,0.55,10,0,96.976,0.332
+7bR1jsWttxgvgvHZ2NhCO3,Call Me Maybe,Carly Rae Jepsen,0,2022-06-30,False,193146,0.772,0.6,7,1,120.026,0.644
+2M4JeeHaLCAVgzze2C07zM,What Makes You Beautiful - Originally By One Direction,HOT 100,0,2012-03-22,False,29733,0.666,0.878,9,0,124.965,0.932
+0KAiuUOrLTIkzkpfpn9jb9,Drive By,Train,80,2012-04-17,False,195973,0.765,0.837,1,0,122.028,0.721
+5WQQIDU3HRaMyPkob8mpFb,Where Have You Been,Rihanna,77,2011-11-18,False,242680,0.719,0.847,0,0,127.963,0.444
+5JLv62qFIS1DR3zGEcApRt,Wide Awake,Katy Perry,80,2012-03-12,False,220946,0.514,0.683,5,1,159.814,0.575
+12eMQUn2GzfsfsQLH53M19,Scream,USHER,69,2012-06-12,False,234693,0.616,0.862,7,0,127.992,0.569
+3bC1ahPIYt1btJzSSEyyrF,Whistle,Flo Rida,81,2012-06-22,False,224653,0.747,0.937,0,1,103.976,0.739
+6t6oULCRS6hnI7rm0h5gwl,Some Nights,fun.,71,2012-02-21,True,277040,0.672,0.738,0,1,107.938,0.392
+4XNrMwGx1SqP01sqkGTDmo,One More Night,Maroon 5,73,2012-01-01,False,219466,0.718,0.82,5,0,92.998,0.613
+0VwNdo84DaVYLIkbVO86ND,We Are Never Ever Getting Back Together,Taylor Swift,77,2012-10-22,False,193146,0.628,0.676,7,1,85.984,0.75
+2iUmqdfGZcHIhS3b9E9EWq,Everybody Talks,Neon Trees,81,2012-01-01,True,177280,0.471,0.924,8,1,154.961,0.725
+4sK96UnGx3NjBaqvfTG2dm,Too Close,Alex Clare,60,2011,False,256560,0.584,0.712,11,0,126.043,0.286
+03UrZgTINDqvnUMbbIMhql,Gangnam Style (강남스타일),PSY,75,2012-01-01,False,219493,0.727,0.937,11,0,132.067,0.749
+05GsNucq8Bngd9fnd4fRa0,Begin Again (Taylor's Version),Taylor Swift,73,2021-11-12,False,238866,0.519,0.527,7,1,78.915,0.267
+6Vh03bkEfXqekWp7Y1UBRb,Live While We're Young,One Direction,75,2012-11-12,False,200213,0.663,0.857,2,1,126.039,0.931
+4OAuvHryIVv4kMDNSLuPt6,Red (Taylor's Version),Taylor Swift,80,2021-11-12,False,223093,0.516,0.777,1,0,125.047,0.408
+6VObnIkLVruX4UVyxWhlqm,Skyfall,Adele,86,2012-10-04,False,286480,0.346,0.552,0,0,75.881,0.0789
+7EQGXaVSyEDsCWKmUcfpLk,Die Young,Kesha,80,2012-11-30,False,211920,0.711,0.7,1,0,128.001,0.801
+1z9kQ14XBSN0r2v6fx4IdG,Diamonds,Rihanna,77,2012-01-01,False,225146,0.564,0.71,11,0,91.972,0.393
+4kte3OcW800TPvOVgrLLj8,Let Me Love You (Until You Learn To Love Yourself),Ne-Yo,71,2012-01-01,False,251626,0.658,0.677,5,1,124.91,0.248
+18VfHIPaCo0s6FTi1Fnp6T,Don't Wake Me Up,Chris Brown,64,2012-07-03,False,222306,0.602,0.691,7,0,127.967,0.206
+3w3y8KPTfNeOKPiqUTakBh,Locked out of Heaven,Bruno Mars,91,2012-12-07,False,233478,0.726,0.698,5,1,143.994,0.867
+4bZd0nRuX8HyjeXAUBczvm,I Cry,Flo Rida,68,2012-06-22,False,223800,0.693,0.822,4,0,126.035,0.763
+0W4Kpfp1w2xkY3PrV714B7,Ho Hey,The Lumineers,79,2012-04-03,False,163133,0.685,0.466,0,1,79.936,0.353
